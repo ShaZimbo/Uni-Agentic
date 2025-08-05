@@ -1,0 +1,167 @@
+Attachment faqs_extended.csv added.Conversation opened. 1 read message.
+
+Skip to content
+Using Gmail with screen readers
+in:sent 
+1 of 839
+Agentic
+
+Shanna Wratten <shanwratten@gmail.com>
+Attachments
+09:22 (54 minutes ago)
+to Shanna
+
+https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=33028
+
+Absolutely, yes — you can (and should!) do this entire project using Python in VS Code. It’s a great environment for working with LangChain, OpenAI, and Streamlit, and gives you flexibility to version-control your work via GitHub too (which looks excellent on your CV).
+
+✅ Tools Checklist for VS Code
+Tool	Purpose
+Python 3.10+	Required for LangChain and Streamlit
+VS Code	IDE for code development
+pip / virtualenv	Manage dependencies
+Git + GitHub	(Optional) Version control and portfolio
+Streamlit	Build the user interface
+LangChain	Agent logic and vector search
+FAISS / ChromaDB	Local vector store
+OpenAI API Key	Connect to GPT-3.5/4
+dotenv	Store API keys securely
+🧱 Folder Structure
+university-faq-agent/
+│
+├── app.py                  # Main Streamlit app
+├── ingest.py               # Script to load and embed FAQ documents
+├── qa_chain.py             # LangChain logic and retriever
+├── data/
+│   └── faqs.csv            # Simulated knowledge base
+├── vectorstore/
+│   └── index.faiss         # Saved FAISS index (auto-generated)
+├── .env                    # OpenAI API Key (not tracked)
+├── requirements.txt        # Python dependencies
+└── README.md               # Project overview
+📦 Sample requirements.txt
+openai
+langchain
+streamlit
+python-dotenv
+faiss-cpu
+pandas
+🧠 Tip: If FAISS gives issues on Windows, you can use Chroma as the vector store instead (pip install chromadb).
+
+🛠️ Step-by-Step in VS Code
+Create virtual environment
+
+python -m venv venv
+source venv/bin/activate  # or .\venv\Scripts\activate on Windows
+Install dependencies
+
+pip install -r requirements.txt
+Set up .env file
+
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxx
+Run the app
+
+streamlit run app.py
+🧪 Testing During Development
+Test qa_chain.py by calling the agent directly in a Python script or notebook
+
+Use Streamlit’s st.sidebar to view logs, debug info, or show the source doc
+
+VS Code’s debugger + integrated terminal makes this seamless
+
+✅ Final Result
+A working AI assistant answering university FAQs
+
+Hosted in your local browser with a clean Streamlit UI
+
+Easily sharable (hosted or via GitHub repo)
+
+Tailored directly to the Agentic AI Engineer role
+
+Would you like me to generate a full starter code template (app.py, qa_chain.py, ingest.py, etc.) to copy into VS Code and start building right away?
+
+
+
+Perfect — here’s a realistic, impactful 1-week project you can do to demonstrate relevant skills for the Agentic AI Engineer role:
+
+🧠 Project: University FAQ AI Assistant with OpenAI + LangChain + Streamlit
+🎯 Goal
+Build a lightweight AI chatbot that answers common university questions (e.g. course info, student services, IT support) using OpenAI + LangChain. This directly mirrors the job’s focus on CoPilot-style AI agents integrated with knowledge bases.
+
+🔧 Tools & Tech Stack
+Area	Tool
+AI Model	OpenAI GPT-3.5/4 API
+Framework	LangChain (for agent logic & retrieval)
+UI	Streamlit (simple web UI)
+Knowledge Source	Local .txt/.pdf files or a simulated FAQ CSV
+Vector Store	FAISS or ChromaDB
+Deployment (Optional)	Streamlit Cloud or Hugging Face Spaces
+🗂️ Data Source (Simulated Example)
+Make a simple CSV with questions & answers like:
+
+Question	Answer
+How do I reset my university password?	You can reset it via the IT portal...
+Where can I get help with student finance?	Contact Student Services on Floor 2...
+How do I access Blackboard?	Login via my.manchester.ac.uk...
+🛠️ Project Breakdown
+🕐 Day 1–2: Set Up the Core
+Install LangChain, OpenAI SDK, FAISS
+
+Create simple Q&A CSV and ingest it using LangChain’s document loaders
+
+Set up FAISS vector store
+
+Write a basic retrieval-augmented generation (RAG) chain using OpenAI
+
+🕐 Day 3: Build the Agent
+Use LangChain’s conversational retrieval chain
+
+Give it a system prompt like: “You are a helpful university assistant that only answers questions using the university FAQs.”
+
+Add logging to track what questions it receives and which documents are returned
+
+🕐 Day 4: Add a UI
+Create a Streamlit app with:
+
+Input box for questions
+
+Chat-style output
+
+(Optional) show source documents used in the answer
+
+🕐 Day 5: Testing & AI Guardrails
+Test with unrelated queries (“What’s the weather?”) to confirm it refuses out-of-domain Qs
+
+Add a prompt to restrict hallucinations: “Only answer based on the documents provided.”
+
+🕐 Day 6–7: Polish & Deploy
+Write a README explaining:
+
+Why this is relevant to AI agentic work in HE
+
+How it uses LangChain, vector search, RAG
+
+(Optional) Deploy on Streamlit Cloud and include the link on your CV
+
+✅ What It Demonstrates to the Employer
+Familiarity with GPT-based AI agents
+
+Use of LangChain and retrieval with structured knowledge
+
+Understanding of AI guardrails and responsible design
+
+Ability to explain technical systems to non-technical users (via UI and doc)
+
+Initiative and fast learning — critical for the role
+
+💬 Optional Add-On
+If you have time:
+
+Add a feedback loop (simple thumbs up/down)
+
+Simulate multiple roles (e.g. staff vs. student mode)
+
+Add authentication stubs to show awareness of access control
+
+
+Want me to scaffold the code and folder structure to help you get started faster? I can generate a template right now with instructions to speed things up.
