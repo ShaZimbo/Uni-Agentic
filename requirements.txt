@@ -1,0 +1,7 @@
+streamlit
+python-dotenv
+pandas
+faiss-cpu
+langchain
+langchain-community
+sentence-transformers
