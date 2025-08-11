@@ -1,6 +1,0 @@
-openai
-langchain
-streamlit
-python-dotenv
-faiss-cpu
-pandas
